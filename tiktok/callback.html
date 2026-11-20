@@ -1,0 +1,12 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PeakCut - connecting TikTok</title>
+<body style="font:16px/1.6 system-ui,sans-serif;max-width:640px;margin:40px auto;padding:0 16px">
+<p id="m">Connecting to PeakCut on this computer…</p>
+<script>
+  // TikTok sends the sign-in answer here; it is passed straight on to PeakCut running on this same computer.
+  // Nothing is stored or sent anywhere else.
+  var next = "http://127.0.0.1:8765/oauth/tiktokviews/callback" + location.search;
+  document.getElementById("m").innerHTML = 'Connecting to PeakCut on this computer… If nothing happens, <a href="' + next.replace(/"/g, "") + '">click here</a>.';
+  location.replace(next);
+</script>
+</body>
